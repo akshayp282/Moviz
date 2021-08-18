@@ -1,0 +1,42 @@
+<div class="container mt-5 overflow-hide" [ngClass]="noMovies ? 'a' : 'b'">
+    <div class="row">
+        <div class="row">
+            <div class="col-md-10">
+                <h3 class="text-white">{{category| titlecase}} Movies</h3>
+            </div>
+            <div class="col-md-2 pb-1">
+                <button class="btn btn-danger px-4" (click)="backclick()" style="float: right;">Back</button>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col" *ngFor="let movie of movies">
+                <div style="text-decoration: none; color: black;" (click) = "onSelectMovie(movie)">
+                    <div class="card mb-3" style="width: 18rem;max-height: 350px;">
+                        <img [src]="movie.poster_path" class="card-img-top" alt="{{movie.title}}" style="height: 18rem;">
+                        <div class="card-body">
+                            <div class="overview"> 
+                                <h5>Watch {{movie.title}}</h5>
+                                <img style="cursor: pointer;" src="https://img.icons8.com/ios-filled/50/000000/circled-play.png"/> 
+                            </div>
+                          <h5 class="card-title"> {{movie.title}} </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container"  [ngClass]="noMovies ? 'active' : 'passive'">
+    <div class="row my-4">
+        <div class="col-md-8">
+            <h3 style="color: white;">Recently Watched Movies</h3>
+            <img src="https://image.freepik.com/free-photo/3d-word-oops_58466-263.jpg" alt="No Movies" class="img-responsive" style="max-width: 70%;">
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-danger px-4 mb-4" (click)="backclick()" style="float: right;">Back</button>
+            <br><br> 
+            <p style="color: white;" class="my-4 zerodata">Why wait when we have got awesome collection for you . <br>Start Watching Movies Now !!!</p>
+        </div>
+    </div>
+</div>

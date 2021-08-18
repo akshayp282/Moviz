@@ -1,0 +1,51 @@
+.container.b{
+    background-color: #161d27;
+    min-height: 100vh;
+}
+
+.overview{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: #fff;
+    padding: 1rem;
+    max-height: 100%;
+    transform:translateY(101%);
+    transition:transform 0.3s ease-in;
+    visibility:hidden;
+}
+
+.card:hover .overview{
+    visibility: visible;
+    transform:translateY(0)
+}
+
+.overflow-hide {
+    overflow: hidden;
+}
+
+.passive{
+    display:none;
+}
+
+.active{
+    background-color: #161d27;
+    display: inline-block;
+    margin-left: 10em;
+    height: 100vh;
+}
+
+.a{
+    background-color: #161d27;
+    margin-bottom: 100vh;
+    display: none;
+}
+
+.zerodata{
+    font-size: x-large;
+    font-weight: 400;
+    font-family: fantasy;
+    top: 50%;
+}
+

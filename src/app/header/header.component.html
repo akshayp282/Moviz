@@ -1,0 +1,59 @@
+<ng-template appPlaceholder></ng-template>
+<nav class="navbar navbar-expand">
+    <ng-content></ng-content>
+    <div class="container-fluid">
+        <div class="navbar-header">
+          <img src="../assets/MoviZ..svg" alt="MoviZ." width="100px" height="50px">
+        </div>
+        <div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-center">
+            <li class="adjust-search nav-item">
+              <form class="navbar-form">
+                  <div class="input-group">
+                      <input type="text" id="search-text" aria-describedby="search-text" name="searchMovie" class="form-control" placeholder="Search for Movies" size="60%" [(ngModel)]="searchMovie" (input)="searchThis()">
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-danger" style="height: 39px;width: 40px;" (click)="searchThis()">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                          </svg>
+                        </button>
+                      </div>
+                  </div>
+              </form>    
+            </li>
+          </ul>
+        </div>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-auto">  
+              <li>
+                <div class="dropdown adjust-bell">
+                <a style="cursor: pointer;color: white;" ><img src="../assets/bell.png" alt="bell" width="20px" height="20px" class="shakeit"></a>
+                <ul class="dropdown-menu dropdown-menu-dark" >
+                  <li><a style="cursor: pointer;" class="dropdown-item" (click)="onTrendingWeek()">Trending movies for the week</a></li>
+                  <li><a style="cursor: pointer;" class="dropdown-item" (click)="onTrendingDay()">Trending movies for the day</a></li>
+                </ul>
+              </div>
+              </li>
+              <li>
+                <div class="dropdown adjust-profile">
+                  <a style="cursor: pointer; color: white;" class="dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="../assets/ProfilePic.jpg" alt="profile" class="image-size">
+                    <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuLink">
+                   <li><a style="cursor: pointer;" class="dropdown-item" (click)="myProfile()">My Profile</a></li>
+                  </ul>
+                </div>     
+              </li>
+              <li>
+                <a style="cursor: pointer;color: white;" (click)="onConfirmation()" *ngIf="!isGuestMode()">Sign Out</a>
+                <a style="cursor: pointer;color: white;" (click)="onConfirmation()" *ngIf="isGuestMode()" (click)="onSignIn()">Sign In</a>
+            </li>
+          </ul>
+      </div>
+      </div>
+</nav>
+
+

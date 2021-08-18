@@ -1,0 +1,28 @@
+.container-fluid{
+    background-color: #161d27;
+    color: white;
+    min-height: 100vh;
+}
+.row{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.rating{
+    background-color :#E62E11;
+    width: fit-content;
+    padding:5px 10px 5px 10px;
+    border-radius: 20px;
+}
+
+.rating1{
+    background-color :#11C12E;
+    width: fit-content;
+    padding:5px 10px 5px 10px;
+    border-radius: 20px;
+}
+.rating2{
+    background-color :#D6D20D;
+    width: fit-content;
+    padding:5px 10px 5px 10px;
+    border-radius: 20px;
+}

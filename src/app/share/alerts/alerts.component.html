@@ -1,0 +1,11 @@
+<div class="backdrop" (click)="onClose()">
+    <div class="alert-box">
+        <p style="font-size: medium;">{{message}}</p>
+        <div class="alert-box-actions">
+            <button class="btn btn-danger" (click)="onYes()" *ngIf="compName==='header'">Yes</button>
+            <button class="btn btn-danger" (click)="onClose()">{{compName==='header' ? 'No' : 'Close'}}</button>
+        </div>
+    </div>
+</div>
+
+

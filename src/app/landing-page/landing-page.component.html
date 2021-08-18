@@ -1,0 +1,51 @@
+<ng-template appPlaceholder></ng-template>
+<div class="bg">
+  <nav class="navbar navbar-expand">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <img src="/assets/MoviZ..svg" alt="MoviZ." width="100px" height="50px">
+      </div>
+      <div class="collapse navbar-collapse flex-grow-1 text-right">
+        <ul class="navbar-nav ms-auto flex-nowrap">
+          <li class="nav-item">
+            <button class="btn btn-danger " style="margin-top: 10px;" (click)="onGuestSession()">Sign In as Guest</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-12"></div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <div *ngIf="isLoading" class="centering">
+              <app-loading-icon></app-loading-icon>
+            </div>
+            <form class="form-container" *ngIf="!isLoading" #authenticationForm="ngForm" (ngSubmit)="onSubmit(authenticationForm)">
+                <h1 class="color-text" style="text-align: center;font-weight: bold;">
+                    Welcome to MoviZ. ! 
+                </h1>
+                <br>
+                <p class="color-text" style="text-align: center;">
+                    <strong>Sign In</strong> to watch your favourite shows, anywhere and anytime.<br>
+                </p>
+                <br>
+                <div class="form-group">
+                  <label for="username" class="color-text">Username</label>
+                  <input type="test" ngModel class="form-control" id="username" placeholder="Username" name="username" required>
+                </div>
+                <br>
+                <div class="form-group">
+                  <label for="exampleInputPassword1" class="color-text">Password</label>
+                  <input type="password" ngModel class="form-control" id="exampleInputPassword1" placeholder="Password" minlength="6" name="password" required>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-danger" style="float: right;" [disabled]="!authenticationForm.valid">Sign In</button>
+                <br><br>
+                <hr>
+                <p class="color-text" *ngIf="isLoginMode">Don't have an account ? Click <a style="cursor: pointer;color: red;" (click)="onGuestSession()">here</a> to Sign In as Guest</p>
+              </form>
+              <div class="col-md-4 col-sm-4 col-xs-12"></div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,37 @@
+
+.container-fluid{
+    background-color: #161d27;
+    height:100%;
+    min-height: 100vh;
+}
+.overflow-hide{
+    overflow: hidden;
+}
+
+.row1{
+    margin-top:10px;
+    margin-bottom:20px;
+}
+.row1 Img{
+    border-radius:20%;
+    height:100%;
+    width: 25%;
+}
+.overview{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: #fff;
+    padding: 1rem;
+    max-height: 100%;
+    transform:translateY(101%);
+    transition:transform 0.3s ease-in;
+    visibility:hidden;
+}
+
+.card:hover .overview{
+    visibility: visible;
+    transform:translateY(0)
+}
+
